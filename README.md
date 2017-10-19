@@ -53,16 +53,18 @@ Klicke ins schwarze Feld und gebe die folgenden Befehle ein. Hast du eine Befehl
 
 `>>> pin.off()`
 ### OLED-Bildschirm testen
-`>>> import machine`
+```>>> import machine
 
-`>>> import ssd1306`
+>>> import ssd1306
 
-`>>> i2c = machine.I2C(scl = machine.Pin(4), sda = machine.Pin(5))`
+>>> i2c = machine.I2C(scl = machine.Pin(4), sda = machine.Pin(5))
 
-`>>> oled = ssd1306.SSD1306_I2C(128, 64, i2c)`
+>>> oled = ssd1306.SSD1306_I2C(128, 64, i2c)
 
-`>>> oled.fill(0)`
+>>> oled.fill(0)
 
-`>>> oled.text('Hallo', 0, 0)`
+>>> oled.text('Hallo', 0, 0)
 
-`>>> oled.show()`
+>>> oled.show()
+```
+
