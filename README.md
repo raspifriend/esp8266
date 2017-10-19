@@ -1,3 +1,6 @@
+var mdSmartArrows = require('markdown-it-smartarrows');
+var md = require('markdown-it')().use(mdSmartArrows);
+
 # IoT-Sensor mit ESP8266
 Dies ist eine Anleitung zum Bau eines Temperatur-/Druck-Sensors mit dem ESP8266-Microcontroller.
 ## Bauteile
