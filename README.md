@@ -30,8 +30,8 @@ Zudem gehören folgende Pins zu den jeweiligen Bezeichnungen:
 - SD0 = GND
 
 ## Verbinden mit dem ESP8266 & Laden der Treiber
-1. Lade die Nötigen Dateien an deinem PC/Laptop herunter. Entweder von hier oder von diesem [Link](https://tinyurl.com/iotTecDay). Die heruntergeladene Zip-Datei muss nun entpackt/extrahiert werden. Nun sollte ein extrahierter Ordner "Sensor" vorhanden sein.
-2. Verbinde dein PC/Laptop mit dem WLAN des ESP8266. Der WLAN-Name lautet "Sensor_xx", wobei `xx` der grünen Zahl auf dem ESP8266-Microcontroller entspricht. Das Passwort ist: `iotsensxx`. Hier ist `xx` ebenfalls die grüne Nummer auf dem Chip.
+1. Lade die Nötigen Dateien an deinem Computer herunter. Entweder von hier oder von diesem [Link](https://tinyurl.com/iotTecDay). Die heruntergeladene Zip-Datei muss nun entpackt/extrahiert werden. Nun sollte ein extrahierter Ordner "Sensor" vorhanden sein.
+2. Verbinde deinen Computer mit dem WLAN des ESP8266. Der WLAN-Name lautet "Sensor_xx", wobei `xx` der grünen Zahl auf dem ESP8266-Microcontroller entspricht. Das Passwort ist: `iotsensxx`. Hier ist `xx` ebenfalls die grüne Nummer auf dem Chip.
 3. Öffne die Datei `webrepl.html` aus dem Ordner `Sensor/WebREPL`. 
 4. Falls du dich nicht mit dem WLAN des ESP8266 verbinden kannst, überprüfe die Verkabelung oder betätige den on/off-Schalter am Batteriengehäuse. Beim Einschalten sollte die blaue LED auf dem Microcontroller kurz aufleuchten.
 5. Bist du mit dem WLAN des ESP8266 verbunden, klicke im geöffneten Browser (WebREPL.html) auf den Button `Connect`. Nun wirst du aufgefordert ein Passwort einzugeben. Dieses lautet: `iot1`.
@@ -45,26 +45,33 @@ Klicke ins schwarze Feld und gebe die folgenden Befehle ein. Hast du eine Befehl
 - `12**34`
 - `3/4`
 ### Blaue LED ein-/ausschalten
-`>>> import machine`
-
-`>>> pin = machine.Pin(2, machine.Pin.OUT)`
-
-`>>> pin.on()`
-
-`>>> pin.off()`
+```>>> import machine
+>>> pin = machine.Pin(2, machine.Pin.OUT)
+>>> pin.on()
+>>> pin.off()
+```
 ### OLED-Bildschirm testen
 ```>>> import machine
-
 >>> import ssd1306
-
 >>> i2c = machine.I2C(scl = machine.Pin(4), sda = machine.Pin(5))
-
 >>> oled = ssd1306.SSD1306_I2C(128, 64, i2c)
-
 >>> oled.fill(0)
-
 >>> oled.text('Hallo', 0, 0)
-
 >>> oled.show()
 ```
-
+### Sensor testen
+```>>> import machine
+>>> import ssd1306
+>>> import bme280
+>>> i2c = machine.I2C(scl = machine.Pin(4), sda = machine.Pin(5))
+>>> oled = ssd1306.SSD1306_I2C(128, 64, i2c)
+>>> bme = bme280.BME280(i2c = i2c)
+>>> bme.values
+>>> oled.fill(0)
+>>> oled.text(bme.values[0], 0, 0)
+>>> oled.show()
+```
+(Eckige Klammern können aus einem Dokument/Google-Suche kopiert (mit `CTRL-C`) und mit Drücken von `CTRL-A` gefolgt von `CTRL-V` im WebREPL eingefügt werden.)
+### HTTP-Server 
+1. Öffne auf dem Computer die Datei `main.py` aus dem Ordner `Sensor` mit dem Texteditor oder Notepad++ (Rechtsklick --> "Öffnen mit...").
+2. 
