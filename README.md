@@ -1,6 +1,3 @@
-var mdSmartArrows = require('markdown-it-smartarrows');
-var md = require('markdown-it')().use(mdSmartArrows);
-
 # IoT-Sensor mit ESP8266
 Dies ist eine Anleitung zum Bau eines Temperatur-/Druck-Sensors mit dem ESP8266-Microcontroller.
 ## Bauteile
@@ -77,4 +74,10 @@ Klicke ins schwarze Feld und gebe die folgenden Befehle ein. Hast du eine Befehl
 (Eckige Klammern können aus einem Dokument/Google-Suche kopiert (mit `CTRL-C`) und mit Drücken von `CTRL-A` gefolgt von `CTRL-V` im WebREPL eingefügt werden.)
 ### HTTP-Server 
 1. Öffne auf dem Computer die Datei `main.py` aus dem Ordner `Sensor` mit dem Texteditor oder Notepad++ (Rechtsklick --> "Öffnen mit...").
-2. 
+2. Im Texteditor/Notepad++ kannst du nun die `main.py`-Datei bearbeiten. Beispielsweise kannst du überall `Felix` mit deinem Namen ersetzen.
+3. Speicher das geänderte `main.py` ab ("Datei speichern"). 
+4. Wechsle wieder in den Browser zum WebREPL und verbinde dich mit dem Sensor. Klicke dazu auf `Connect` und gib das Passwort `iot1` ein. (Versichere dich, dass dein Computer mit dem WLAN des ESP8266 verbunden ist.) 
+5. Sende die Datei `main.py` an den ESP8266 (mit dem Button `Durchsuchen` --> `main.py` auswählen --> Button `Send to device`).
+6. Die Datei `main.py` wird beim Neustart des ESP8266 ausgeführt. Zum Neustarten klickst du auf den kleinen Knopf `RST` auf dem Microcontroller oder betätige den on/off-Schalter am Batteriengehäuse.
+7. Der IoT-Sensor ist fertig! Mit dem Smartphone kannst du dich jetzt mit dem WLAN des ESP8266 verbinden und im Browser unter der Adresse `192.168.4.1` die aktuellen Temperatur- und Druckwerte auslesen.
+
