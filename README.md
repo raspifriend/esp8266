@@ -36,3 +36,33 @@ Zudem gehören folgende Pins zu den jeweiligen Bezeichnungen:
 4. Falls du dich nicht mit dem WLAN des ESP8266 verbinden kannst, überprüfe die Verkabelung oder betätige den on/off-Schalter am Batteriengehäuse. Beim Einschalten sollte die blaue LED auf dem Microcontroller kurz aufleuchten.
 5. Bist du mit dem WLAN des ESP8266 verbunden, klicke im geöffneten Browser (WebREPL.html) auf den Button `Connect`. Nun wirst du aufgefordert ein Passwort einzugeben. Dieses lautet: `iot1`.
 6. Sende nun die Dateien `ssd1306.py` und `bme280.py` an den Microcontroller. Dazu klickst du auf den Button `Durchsuchen` und wählst zuerst die Datei `ssd1306.py`aus. Nun auf den Button `Send to device` klicken. Wiederhole den Vorgang für die Datei `bme280.py`.
+7. Nun kannst du den ESP8266-Chip mit Micropython programmieren.
+## Befehle testen
+Im Browser kannst du im schwarzen Feld (mit den `>>>`) Befehle eingeben, die dann vom Microcontroller ausgeführt werden.
+Klicke ins schwarze Feld und gebe die folgenden Befehle ein. Hast du eine Befehlszeile eingegeben, musst du zum Ausführen des Befehls die Enter-Tast drücken.
+### Rechnen
+- `1+1`
+- `12**34`
+- `3/4`
+### Blaue LED ein-/ausschalten
+`>>> import machine`
+
+`>>> pin = machine.Pin(2, machine.Pin.OUT)`
+
+`>>> pin.on()`
+
+`>>> pin.off()`
+### OLED-Bildschirm testen
+`>>> import machine`
+
+`>>> import ssd1306`
+
+`>>> i2c = machine.I2C(scl = machine.Pin(4), sda = machine.Pin(5))`
+
+`>>> oled = ssd1306.SSD1306_I2C(128, 64, i2c)`
+
+`>>> oled.fill(0)`
+
+`>>> oled.text('Hallo', 0, 0)`
+
+`>>> oled.show()`
