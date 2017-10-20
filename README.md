@@ -28,7 +28,7 @@ Zudem gehören folgende Pins zu den jeweiligen Bezeichnungen:
 - Pin 3 [D2] = SCL
 - CSB = VCC/3V3
 - SD0 = GND
-
+![Verkabelung](tempsens_Zusammenbau.png "Verkabelung Sensor")
 ## Verbinden mit dem ESP8266 & Laden der Treiber
 1. Lade die nötigen Dateien an deinem Computer herunter. Entweder von github oder von diesem [Link](https://tinyurl.com/iotTecDay). Die heruntergeladene Zip-Datei muss nun entpackt/extrahiert werden. Nun sollte ein extrahierter Ordner "Sensor" auf dem Computer vorhanden sein.
 2. Verbinde deinen Computer mit dem WLAN des ESP8266. Der WLAN-Name lautet "Sensor_xx", wobei `xx` der grünen Zahl auf dem ESP8266-Microcontroller entspricht. Das Passwort ist: `iotsensxx`. Hier ist `xx` ebenfalls die grüne Nummer auf dem Chip.
