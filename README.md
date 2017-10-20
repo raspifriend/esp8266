@@ -46,13 +46,15 @@ Klicke ins schwarze Feld und gebe die folgenden Befehle ein. Hast du eine Befehl
 - `12**34`
 - `3/4`
 ### Blaue LED ein-/ausschalten
-```>>> import machine
+```
+>>> import machine
 >>> pin = machine.Pin(2, machine.Pin.OUT)
 >>> pin.on()
 >>> pin.off()
 ```
 ### OLED-Bildschirm testen
-```>>> import machine
+```
+>>> import machine
 >>> import ssd1306
 >>> i2c = machine.I2C(scl = machine.Pin(4), sda = machine.Pin(5))
 >>> oled = ssd1306.SSD1306_I2C(128, 64, i2c)
@@ -61,7 +63,8 @@ Klicke ins schwarze Feld und gebe die folgenden Befehle ein. Hast du eine Befehl
 >>> oled.show()
 ```
 ### Sensor testen
-```>>> import machine
+```
+>>> import machine
 >>> import ssd1306
 >>> import bme280
 >>> i2c = machine.I2C(scl = machine.Pin(4), sda = machine.Pin(5))
