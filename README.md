@@ -30,16 +30,16 @@ Zudem gehören folgende Pins zu den jeweiligen Bezeichnungen:
 - SD0 = GND
 
 ## Verbinden mit dem ESP8266 & Laden der Treiber
-1. Lade die Nötigen Dateien an deinem Computer herunter. Entweder von hier oder von diesem [Link](https://tinyurl.com/iotTecDay). Die heruntergeladene Zip-Datei muss nun entpackt/extrahiert werden. Nun sollte ein extrahierter Ordner "Sensor" vorhanden sein.
+1. Lade die nötigen Dateien an deinem Computer herunter. Entweder von github oder von diesem [Link](https://tinyurl.com/iotTecDay). Die heruntergeladene Zip-Datei muss nun entpackt/extrahiert werden. Nun sollte ein extrahierter Ordner "Sensor" auf dem Computer vorhanden sein.
 2. Verbinde deinen Computer mit dem WLAN des ESP8266. Der WLAN-Name lautet "Sensor_xx", wobei `xx` der grünen Zahl auf dem ESP8266-Microcontroller entspricht. Das Passwort ist: `iotsensxx`. Hier ist `xx` ebenfalls die grüne Nummer auf dem Chip.
-3. Öffne die Datei `webrepl.html` aus dem Ordner `Sensor/WebREPL`. 
+3. Öffne die Datei `webrepl.html` aus dem Ordner `WebREPL` (`WebREPL` befindet sich im Ordner `Sensor`). 
 4. Falls du dich nicht mit dem WLAN des ESP8266 verbinden kannst, überprüfe die Verkabelung oder betätige den on/off-Schalter am Batteriengehäuse. Beim Einschalten sollte die blaue LED auf dem Microcontroller kurz aufleuchten.
 5. Bist du mit dem WLAN des ESP8266 verbunden, klicke im geöffneten Browser (WebREPL.html) auf den Button `Connect`. Nun wirst du aufgefordert ein Passwort einzugeben. Dieses lautet: `iot1`.
-6. Sende nun die Dateien `ssd1306.py` und `bme280.py` an den Microcontroller. Dazu klickst du auf den Button `Durchsuchen` und wählst zuerst die Datei `ssd1306.py`aus. Nun auf den Button `Send to device` klicken. Wiederhole den Vorgang für die Datei `bme280.py`.
-7. Nun kannst du den ESP8266-Chip mit Micropython programmieren.
+6. Sende nun die Dateien `ssd1306.py` und `bme280.py` an den Microcontroller. Dazu klickst du auf den Button `Durchsuchen` und wählst zuerst die Datei `ssd1306.py` aus. Nun auf den Button `Send to device` klicken. Wiederhole den Vorgang für die Datei `bme280.py`.
+7. Nun kannst du den ESP8266-Chip mit MicroPython programmieren.
 ## Befehle testen
 Im Browser kannst du im schwarzen Feld (mit den `>>>`) Befehle eingeben, die dann vom Microcontroller ausgeführt werden.
-Klicke ins schwarze Feld und gebe die folgenden Befehle ein. Hast du eine Befehlszeile eingegeben, musst du zum Ausführen des Befehls die Enter-Tast drücken.
+Klicke ins schwarze Feld und gebe die folgenden Befehle ein. Hast du eine Befehlszeile eingegeben, musst du zum Ausführen des Befehls die Enter-Taste drücken.
 ### Rechnen
 - `1+1`
 - `12**34`
@@ -72,12 +72,12 @@ Klicke ins schwarze Feld und gebe die folgenden Befehle ein. Hast du eine Befehl
 >>> oled.show()
 ```
 (Eckige Klammern können aus einem Dokument/Google-Suche kopiert (mit `CTRL-C`) und mit Drücken von `CTRL-A` gefolgt von `CTRL-V` im WebREPL eingefügt werden.)
-### HTTP-Server 
-1. Öffne auf dem Computer die Datei `main.py` aus dem Ordner `Sensor` mit dem Texteditor oder Notepad++ (Rechtsklick --> "Öffnen mit...").
-2. Im Texteditor/Notepad++ kannst du nun die `main.py`-Datei bearbeiten. Beispielsweise kannst du überall `Felix` mit deinem Namen ersetzen.
-3. Speicher das geänderte `main.py` ab ("Datei speichern"). 
-4. Wechsle wieder in den Browser zum WebREPL und verbinde dich mit dem Sensor. Klicke dazu auf `Connect` und gib das Passwort `iot1` ein. (Versichere dich, dass dein Computer mit dem WLAN des ESP8266 verbunden ist.) 
+## HTTP-Server 
+1. Öffne auf dem Computer die Datei `main.py` aus dem Ordner `Sensor` mit dem Texteditor oder Notepad++ (Rechtsklick auf die Datei --> "Öffnen mit...").
+2. Im Texteditor/Notepad++ kannst du nun die `main.py`-Datei bearbeiten. Beispielsweise kannst du überall `Felix` mit deinem Namen ersetzen (oder auch den Titel `ESP8266 Temperatur-/Drucksensor` ändern).
+3. Speichere das geänderte `main.py` ab ("Datei speichern"). 
+4. Wechsle wieder in den Browser zum WebREPL und verbinde dich mit dem Sensor. Klicke dazu auf `Connect` und gib das Passwort `iot1` ein. (Vergewissere dich, dass dein Computer mit dem WLAN des ESP8266 verbunden ist.) 
 5. Sende die Datei `main.py` an den ESP8266 (mit dem Button `Durchsuchen` --> `main.py` auswählen --> Button `Send to device`).
 6. Die Datei `main.py` wird beim Neustart des ESP8266 ausgeführt. Zum Neustarten klickst du auf den kleinen Knopf `RST` auf dem Microcontroller oder betätige den on/off-Schalter am Batteriengehäuse.
-7. Der IoT-Sensor ist fertig! Mit dem Smartphone kannst du dich jetzt mit dem WLAN des ESP8266 verbinden und im Browser unter der Adresse `192.168.4.1` die aktuellen Temperatur- und Druckwerte auslesen.
+7. Der IoT-Sensor ist fertig! Mit dem Smartphone kannst du dich jetzt mit dem WLAN des ESP8266 verbinden und im Browser unter der Adresse `192.168.4.1` die aktuellen Temperatur- und Druckwerte ablesen.
 
