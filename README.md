@@ -28,6 +28,7 @@ Zudem gehören folgende Pins zu den jeweiligen Bezeichnungen:
 - Pin 3 [D2] = SCL
 - CSB = VCC/3V3
 - SD0 = GND
+
 ![Verkabelung](tempsens_Zusammenbau.png "Verkabelung Sensor")
 ## Verbinden mit dem ESP8266 & Laden der Treiber
 1. Lade die nötigen Dateien an deinem Computer herunter. Entweder von github oder von diesem [Link](https://tinyurl.com/iotTecDay). Die heruntergeladene Zip-Datei muss nun entpackt/extrahiert werden. Nun sollte ein extrahierter Ordner "Sensor" auf dem Computer vorhanden sein.
